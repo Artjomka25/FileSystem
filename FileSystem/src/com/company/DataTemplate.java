@@ -1,20 +1,14 @@
 package com.company;
 
 public abstract class DataTemplate {
-    protected String name;
-    protected int size;
-    protected String path;
     protected Folder parentFolder;
+    protected String name;
 
     DataTemplate(String name) {
         this.name = name;
     }
 
-    public int getSize() {
-        return size;
-    }
+    public abstract int getSize();
 
-    public String getPath() {
-        return path;
-    }
+    public abstract String getPath();
 }

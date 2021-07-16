@@ -7,33 +7,29 @@ public class Folder extends DataTemplate {
 
     Folder(String name) {
         super(name);
-        this.size = 0;
     }
 
     public void addDataTemplate(DataTemplate data) {
         dataTemplates.add(data);
-        this.updatePath();
-        if (parentFolder != null) {  //TODO неверная логика , не обновляет размер всех родительских папок верхнего уровня
-            parentFolder.updateSize();
-        }
         data.parentFolder = this;
     }
 
-    //TODO: заменить поля size и path на рекурсивные методы getSize u getPath
-    public void updateSize() {
-        if (dataTemplates.size() > 0) {
-            this.size = 0;
-            for (DataTemplate data : dataTemplates) {
-                size += data.size;
-            }
+    @Override
+    public int getSize() {
+        int size = 0;
+        for (DataTemplate dataTemplate : dataTemplates) {
+            size += dataTemplate.getSize();
         }
+        return size;
     }
 
-    public void updatePath() {
-        path = name;
+    @Override
+    public String getPath() {
+        String path = name;
         if (parentFolder != null) {
             path = parentFolder.getPath() + "/" + name;
         }
+        return path;
     }
 
     public ArrayList<DataTemplate> getDataTemplates() {
