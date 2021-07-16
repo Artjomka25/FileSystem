@@ -29,18 +29,8 @@ public class Folder extends DataTemplate {
 
     @Override
     public String toString() {
-        String str = " Folder:" + "\n" + " Name = " + name + "\n" + " Size = " + getSize() + "\n";
-        if (parentFolder != null) {
-            str += " Path = " + getPath() + "\n";
-        } else {
-            str += " Path = " + name + "/\n";
-        }
-        if (parentFolder != null) {
-            str += " ParentFolder: " + parentFolder.name + "\n";
-        } else {
-            str += " ParentFolder: No\n";
-        }
-        str += " Amount of elements = " + dataTemplates.size() + "\n" + "\n";
-        return str;
+        return " Folder:" + "\n" + " Path = " + getPath() + "\n" +
+                " Size = " + getSize() + "\n" +
+                " Amount of elements = " + dataTemplates.size() + "\n" + "\n";
     }
 }

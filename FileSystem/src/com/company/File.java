@@ -16,9 +16,7 @@ public class File extends DataTemplate {
     @Override
     public String toString() {
         return " File:" + "\n" +
-                " Name = " + name + "\n" +
-                " Size = " + getSize() + "\n" +
                 " Path = " + getPath() + "\n" +
-                " ParentFolder: " + parentFolder.name + "\n" + "\n";
+                " Size = " + getSize() + "\n" + "\n";
     }
 }
