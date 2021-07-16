@@ -14,15 +14,6 @@ public class File extends DataTemplate {
     }
 
     @Override
-    public String getPath() {
-        String path = name;
-        if (parentFolder != null) {
-            path = parentFolder.getPath() + "/" + name;
-        }
-        return path;
-    }
-
-    @Override
     public String toString() {
         return " File:" + "\n" +
                 " Name = " + name + "\n" +

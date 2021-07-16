@@ -10,5 +10,11 @@ public abstract class DataTemplate {
 
     public abstract int getSize();
 
-    public abstract String getPath();
+    public String getPath(){
+        String path = name;
+        if (parentFolder != null) {
+            path = parentFolder.getPath() + "/" + name;
+        }
+        return path;
+    }
 }

@@ -14,9 +14,9 @@ public class Main {
 
         imagesFolder.addDataTemplate(file1);
         musicFolder.addDataTemplate(file2);
-        System.out.println(documentsFolder);
+        System.out.println(imagesFolder);
         System.out.println("Child files and folders");
         System.out.println("-----------------------");
-        System.out.println(documentsFolder.getDataTemplates());
+        System.out.println(imagesFolder.getDataTemplates());
     }
 }

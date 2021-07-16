@@ -23,15 +23,6 @@ public class Folder extends DataTemplate {
         return size;
     }
 
-    @Override
-    public String getPath() {
-        String path = name;
-        if (parentFolder != null) {
-            path = parentFolder.getPath() + "/" + name;
-        }
-        return path;
-    }
-
     public ArrayList<DataTemplate> getDataTemplates() {
         return dataTemplates;
     }
